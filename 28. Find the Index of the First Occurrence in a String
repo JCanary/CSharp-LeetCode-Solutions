@@ -1,0 +1,8 @@
+public class Solution {
+    public int StrStr(string haystack, string needle) 
+    {
+        int needlePos;
+        needlePos = haystack.IndexOf(needle);
+        return needlePos;
+    }
+}
