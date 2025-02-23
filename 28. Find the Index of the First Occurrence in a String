@@ -1,3 +1,5 @@
+// 8ms runtime
+// 40.8MB memory
 public class Solution {
     public int StrStr(string haystack, string needle) 
     {
