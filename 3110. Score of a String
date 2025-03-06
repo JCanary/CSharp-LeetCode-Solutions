@@ -1,0 +1,20 @@
+//
+
+public class Solution {
+    public int ScoreOfString(string s) {
+        int value = 0; 
+
+        while (s.Length > 1)
+        {
+            int x = Convert.ToInt32(s[0]);
+            int y = Convert.ToInt32(s[1]);
+
+            if (x > y) {value += (x - y);}
+            else {value += (y - x);}
+
+            s = s.Remove(0, 1);
+        }
+
+        return value;
+    }
+}
