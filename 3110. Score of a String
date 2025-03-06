@@ -1,5 +1,5 @@
-//
-
+// 0 ms Runtime
+// 41.2 MB Memory
 public class Solution {
     public int ScoreOfString(string s) {
         int value = 0; 
