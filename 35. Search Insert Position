@@ -1,5 +1,5 @@
-//
-//
+// 0 ms Runtime
+// 43.3 MB Memory
 public class Solution {
     public int SearchInsert(int[] nums, int target) {
         int index = Array.BinarySearch(nums, target);
