@@ -1,0 +1,29 @@
+// 51 ms Runtime
+// 55.19 MB Memory
+public class Solution {
+    public bool IsAnagram(string s, string t) {
+        char[] sArray = s.ToCharArray();
+        char[] tArray = t.ToCharArray();
+
+        Array.Sort(sArray);
+        Array.Sort(tArray);
+        Stack sStack = new Stack();
+        Stack tStack = new Stack();
+
+        foreach (char letter in sArray)
+        {
+            sStack.Push(letter);
+        }
+
+        foreach (char letter in tArray)
+        {
+            tStack.Push(letter);
+        }
+
+        string sString = String.Join("", sStack.ToArray());
+        string tString = String.Join("", tStack.ToArray());
+
+        if (sString == tString) return true;
+        else return false;
+    }
+}
