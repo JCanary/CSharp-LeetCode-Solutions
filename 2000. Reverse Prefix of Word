@@ -1,0 +1,15 @@
+// 2 ms Runtime
+// 42.5 MB Memory
+public class Solution {
+    public string ReversePrefix(string word, char ch) {
+        if (word.IndexOf(ch) > 0)
+        {
+            char[] arr = word.ToCharArray(0, word.IndexOf(ch) + 1);
+            var reversed = arr.Reverse();
+            string reversedPortion = String.Join("", reversed);
+            word = word.Remove(0, word.IndexOf(ch) + 1);
+            return (reversedPortion + word);
+        }
+        else return word;
+    }
+}
