@@ -1,27 +1,21 @@
-string[] words = ["apples","i","love","leetcode"];
+// 12 ms Runtime
+// 46.72 MB Memory
+public class Solution {
+    public bool IsPrefixString(string s, string[] words) {
+        bool answer = false;
+        Stack<string> myStack = new Stack<string>();
 
-string s = "iloveleetcode";
+        foreach (string word in words)
+        {
+            myStack.Push(word);
+            Console.WriteLine(myStack.Peek());
+            string[] testArray = myStack.ToArray();
+            Array.Reverse(testArray);
+            string test = String.Join("", testArray);
+            Console.WriteLine(test);
+            if (test == s) answer = true;
+        }
 
-var dict = new Dictionary<int, string> {};
-
-List<string> sList = new List<string>();
-
-for (int i = 0; i < words.Count(); i++)
-{
-    if (s.Contains(words[i]))
-    {
-        dict.Add(s.IndexOf(words[i]), words[i]);
+        return answer;
     }
 }
-foreach (KeyValuePair<int, string> item in dict)
-{
-    sList.Add(item.Value);
-}
-
-string[] sArray = sList.ToArray();
-
-string r = String.Join("", sArray);
-
-Console.WriteLine(r);
-//if (s == r) return true;
-//else return false;
