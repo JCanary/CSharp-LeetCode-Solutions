@@ -31,13 +31,17 @@ var dict = new Dictionary<char, string>
     {'z', "26"},
 };
 
-Stack<string> myStack = new Stack<string>();
+string test = "";
 
 foreach (char c in s)
 {
-    myStack.Push(dict[c]);
+    test += dict[c];
 }
 
+foreach (char c in test)
+{
+    
+}
 string[] valueArray = myStack.ToArray();
 
 Array.Reverse(valueArray);
