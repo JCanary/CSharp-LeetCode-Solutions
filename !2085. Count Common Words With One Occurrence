@@ -1,1 +1,34 @@
-// next problem to solve
+string[] words1 = ["leetcode", "is", "amazing", "as", "is"];
+string[] words2 = ["amazing", "leetcode", "is"];
+
+var dict1 = new Dictionary<string, bool>{};
+var dict2 = new Dictionary<string, bool>{};
+
+foreach (string word in words1)
+{
+    if (!dict1.ContainsKey(word))
+    {
+        dict1.TryAdd(word, true);
+    }
+    else dict1.Remove(word);
+}
+
+foreach (string word in words2)
+{
+    if (!dict2.ContainsKey(word))
+    {
+        dict2.TryAdd(word);
+    }
+    else dict2.Remove(word);
+}
+
+int output = 0;
+/*
+
+this does not work bc of how my dictionaries are set up. Need to rework the dicts
+for (int i = 0; i < dict1.Count(); i++)
+{
+    if (dict1.ContainsKey(i) && dict2.ContainsKey(i)) output++;
+}
+*/
+Console.WriteLine(output);
