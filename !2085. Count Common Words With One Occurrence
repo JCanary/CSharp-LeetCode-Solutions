@@ -1,3 +1,7 @@
+// use two dictionaries to add and remove items
+
+
+
 string[] words1 = ["leetcode", "is", "amazing", "as", "is"];
 string[] words2 = ["amazing", "leetcode", "is"];
 
