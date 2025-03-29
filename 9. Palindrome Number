@@ -1,0 +1,16 @@
+// 3ms Runtime Beats 40.03%
+// 37.19MB Memory Beats 31.28%
+public class Solution {
+    public bool IsPalindrome(int x) {
+        string y = Convert.ToString(x);
+
+        char[] c = y.ToCharArray();
+
+        Array.Reverse(c);
+
+        string z = new string(c);
+
+        if (y == z) return true;
+        else return false;
+    }
+}
