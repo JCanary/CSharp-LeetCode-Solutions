@@ -17,3 +17,21 @@ public class Solution {
         return a[0];
     }
 }
+
+// test solution w/o stack 
+
+public class Solution {
+    public int ClimbStairs(int n) {
+        int input = n + 2;
+        var (first, second) = (0, 1);
+        for (int i = 0; i < input; i++)
+        {
+						if (i == input - 1) return first;
+            (first, second) = (second, first + second);
+        }
+
+    }
+}
+
+
+
