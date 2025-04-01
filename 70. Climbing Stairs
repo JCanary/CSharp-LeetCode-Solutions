@@ -1,35 +1,16 @@
-// 2ms Runtime Beats 3.04%
-// 29.63MB Memory Beats 5.67%
-public class Solution {
-    public int ClimbStairs(int n) {
-        Stack<int> myStack = new Stack<int>();
-
-        int input = n + 2;
-        var (first, second) = (0, 1);
-        for (int i = 0; i < input; i++)
-        {
-            myStack.Push(first);
-            (first, second) = (second, first + second);
-        }
-
-        int[] a = [.. myStack];
-
-        return a[0];
-    }
-}
-
-// test solution w/o stack 
-
+// 0ms Runtime Beats 100%
+// 28.7MB Memory Beats 88.97%
 public class Solution {
     public int ClimbStairs(int n) {
         int input = n + 2;
         var (first, second) = (0, 1);
         for (int i = 0; i < input; i++)
         {
-						if (i == input - 1) return first;
+            if (i == input - 1) break;
             (first, second) = (second, first + second);
         }
 
+        return first;
     }
 }
 
