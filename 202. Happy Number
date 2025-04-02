@@ -1,0 +1,36 @@
+// 8ms Runtime Beats 10.84%
+// 33.27MB Memory Beats 5.04%
+public class Solution {
+    public bool IsHappy(int n) {
+       int loopStop = 0;
+
+        Stack<int> myStack = new Stack<int>();
+
+        while (n != 1)
+        {
+            int output = 0;
+            string s = n.ToString();
+            foreach (char c in s)
+            {
+                string temp = Convert.ToString(c);
+                int num = Int32.Parse(temp);
+                num = num * num;
+                myStack.Push(num);
+            }
+            
+            foreach (int num in myStack)
+            {
+                output += num;
+            }
+
+            n = output;
+            myStack.Clear();
+            loopStop ++;
+            if (loopStop == 100) break;
+        }
+
+        if (n == 1) return true;
+        else return false;
+        
+    }
+}
