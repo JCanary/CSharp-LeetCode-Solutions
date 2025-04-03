@@ -1,0 +1,20 @@
+// 8ms Runtime Beats 86.9%
+// 62.19MB Memory Beats 64.94%
+public class Solution {
+    public bool ContainsDuplicate(int[] nums) {
+        var dict = new Dictionary<int, int>{};
+
+        bool output = false;
+
+        foreach (int num in nums)
+        {
+            if (!dict.ContainsKey(num))
+            {
+                dict.Add(num, 0);
+            }
+            else output = true;
+        }
+
+        return output;
+    }
+}
