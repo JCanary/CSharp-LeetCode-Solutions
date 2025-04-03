@@ -1,0 +1,40 @@
+// 205. Isomorphic Strings
+// s.length == t.length
+
+// count number of unique elements, 
+// count the number of instances of each element,
+// push unique element and instances to a hashmap
+// compare the elements in the two dictionaries and see if there is a 1 to 1 match
+
+string s = "foo", t = "bar";
+
+var dict1 = new Dictionary<char, int>{};
+var dict2 = new Dictionary<char, int>{};
+
+foreach (char c in s)
+{
+    if (!dict1.ContainsKey(c)) dict1.Add(c, 1);
+    else dict1[c] += 1;
+}
+
+foreach (char c in t)
+{
+    if (!dict2.ContainsKey(c)) dict2.Add(c, 1);
+    else dict2[c] += 1;
+}
+
+bool flag = true;
+
+for (int i = 0; i < s.Length; i++)
+{
+    if (!dict1.ContainsValue(i) && dict2.ContainsValue(i) || dict1.ContainsValue(i) && !dict2.ContainsValue(i))
+    {
+        flag = false;
+        //Console.WriteLine("f");
+    }
+    //else Console.WriteLine("t");
+}
+
+
+if (flag) return true;
+else return false;
