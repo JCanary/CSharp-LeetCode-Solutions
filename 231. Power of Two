@@ -1,0 +1,20 @@
+// 0 ms Runtime Beats 100%
+// 31.08 MB Memory Beats 26.83%
+public class Solution {
+    public bool IsPowerOfTwo(int n) {
+        double d = n;
+
+        if (d <= 0) return false;
+
+        while (d != 1)
+        {
+            d = d / 2;
+            if (d > 1 && d < 2)
+            {
+                return false;
+            }
+        }
+
+        return true;
+    }
+}
