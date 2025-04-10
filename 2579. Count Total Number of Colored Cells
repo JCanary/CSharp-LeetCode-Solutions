@@ -1,0 +1,14 @@
+// 1ms Runtime Beats 43.99%
+// 29.61MB Memory Beats 8.43%
+public class Solution {
+    public long ColoredCells(int n) {
+        long total = 1;
+
+        for (int i = 0; i < n; i++)
+        {
+            total += i * 4;
+        }
+
+        return total;
+    }
+}
