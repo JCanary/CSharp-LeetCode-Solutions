@@ -1,0 +1,15 @@
+// 0ms Runtime Beats 100%
+// 29.01MB Memory Beats 42.86%
+public class Solution {
+    public int NumberOfCuts(int n) {
+        if (n == 1) return 0;
+        else
+        {
+            if (n % 2 == 0)
+            {
+                return n / 2;
+            }
+            else return n;
+        }
+    }
+}
