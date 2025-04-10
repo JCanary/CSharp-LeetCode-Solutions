@@ -1,0 +1,15 @@
+// 0ms Runtime Beats 100%
+// 28.95MB Memory Beats 45.36%
+public class Solution {
+    public int SmallestEvenMultiple(int n) {
+       int output = 0;
+
+        if (n % 2 == 0)
+        {
+            output = n;
+        }
+        else output = n * 2; 
+
+        return output;
+    }
+}
