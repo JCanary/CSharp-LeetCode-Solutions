@@ -1,0 +1,7 @@
+// 0ms Runtime Beats 100%
+// 64.65MB Memory Beats 81.91%
+public class Solution {
+    public void ReverseString(char[] s) {
+        Array.Reverse(s);  
+    }
+}
