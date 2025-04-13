@@ -1,0 +1,21 @@
+// Leetcode times out during submission. Will have to make solution efficient.
+
+public class Solution {
+    public string AddSpaces(string s, int[] spaces) {
+        string output = "";
+
+        char[] sArray = s.ToCharArray();
+
+        for (int i = 0; i < sArray.Length; i++)
+        {
+            if (spaces.Contains(i) && !output.EndsWith(" "))
+            {
+                output += " ";
+                i--;
+            }
+            else output += sArray[i];
+        }
+
+        return output;
+    }
+}
