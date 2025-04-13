@@ -1,0 +1,21 @@
+// 2ms Runtime Beats 56.25%
+// 42.65MB Memory Beats 43.57%
+public class Solution {
+    public char FindTheDifference(string s, string t) {
+        char[] sArray = s.ToCharArray();
+
+        List<char> tList = t.ToList();
+
+        foreach (char c in sArray)
+        {
+            if (tList.Contains(c))
+            {
+                tList.Remove(c);
+            }
+        }
+
+        return tList[0];
+    }
+}
+
+// Sorting tList on Line 8 produces a 9ms runtime and 42.2MB memory use, which beats 17% and 91% respectively
