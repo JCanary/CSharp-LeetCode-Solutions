@@ -1,0 +1,21 @@
+// 0ms Runtime Beats 100%
+// 39.48MB Memory Beats 23.85%
+public class Solution {
+    public int IsPrefixOfWord(string sentence, string searchWord) {
+        string[] words = sentence.Split(" ");
+
+        int i = 0;
+
+        foreach (string word in words)
+        {
+            i++;
+
+            if (word.StartsWith(searchWord))
+            {
+                return i;
+            }
+        }
+
+        return -1;
+    }
+}
