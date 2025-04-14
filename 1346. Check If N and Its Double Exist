@@ -1,0 +1,31 @@
+// 5ms Runtime Beats 14.53%
+// 44.46MB Memory Beats 62.11%
+public class Solution {
+    public bool CheckIfExist(int[] arr) {
+        bool output = false;
+
+        bool zeroFlag = false;
+
+        for (int n = 0; n < arr.Length;)
+        {
+            foreach (int num in arr)
+            {
+                if (num * 2 == arr[n])
+                {
+                    if (!zeroFlag)
+                    {
+                        if (num == 0)
+                        {
+                            zeroFlag = true;
+                            continue;
+                        }
+                    }
+                    output = true;
+                }
+            }
+            n++;
+        }
+
+        return output;
+    }
+}
