@@ -1,0 +1,7 @@
+// 14ms Runtime Beats 27.21%
+// 41.83MB Memory Beats 24.26%
+public class Solution {
+    public string ToLowerCase(string s) {
+        return (s.ToLower());
+    }
+}
