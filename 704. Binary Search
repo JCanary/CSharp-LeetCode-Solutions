@@ -1,0 +1,8 @@
+// 0ms Runtime Beats 100%
+// 52.78MB Memory Beats 28.38%
+public class Solution {
+    public int Search(int[] nums, int target) {
+        if (Array.BinarySearch(nums, target) < 0) return -1;
+        else return (Array.BinarySearch(nums, target));
+    }
+}
