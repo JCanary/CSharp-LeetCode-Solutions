@@ -1,0 +1,27 @@
+// 0ms Runtime Beats 100%
+// 42.15MB Memory Beats 22.65%
+public class Solution {
+    public int DominantIndex(int[] nums) {
+        int largest = 0;
+        int output = -1;
+
+        for (int i = 0; i < nums.Length; i++)
+        {
+            if (nums[i] > largest)
+            {
+                largest = nums[i];
+                output = i;
+            }
+        }
+
+        for (int i = 0; i < nums.Length; i++)
+        {
+            if (nums[i] * 2 > largest && nums[i] != largest) 
+            {
+                output = -1;
+            }
+        }
+
+        return output;
+    }
+}
