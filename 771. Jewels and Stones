@@ -1,0 +1,27 @@
+// 0ms Runtime Beats 100%
+// 40MB Memory Beats 30.79%
+public class Solution {
+    public int NumJewelsInStones(string jewels, string stones) {
+        var dict = new Dictionary<char, int>{};
+
+        int output = 0;
+
+        foreach (char c in jewels)
+        {
+            if (!dict.ContainsKey(c))
+            {    
+                dict.Add(c, 0);
+            }
+        }
+
+        foreach (char c in stones)
+        {
+            if (dict.ContainsKey(c))
+            {
+                output++;
+            }
+        }
+
+        return output;
+    }
+}
