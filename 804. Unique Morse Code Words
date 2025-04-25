@@ -1,0 +1,54 @@
+//  1ms Runtime Beats 92.2%
+//  41.58MB Memory Beats 60.99%
+public class Solution {
+    public int UniqueMorseRepresentations(string[] words) {
+        var transformationList = new Dictionary<string, int>{};
+
+        var morseConversion = new Dictionary<char, string>
+        {
+            {'a',".-"},
+            {'b',"-..."},
+            {'c',"-.-."},
+            {'d',"-.."},
+            {'e',"."},
+            {'f',"..-."},
+            {'g',"--."},
+            {'h',"...."},
+            {'i',".."},
+            {'j',".---"},
+            {'k',"-.-"},
+            {'l',".-.."},
+            {'m',"--"},
+            {'n',"-."},
+            {'o',"---"},
+            {'p',".--."},
+            {'q',"--.-"},
+            {'r',".-."},
+            {'s',"..."},
+            {'t',"-"},
+            {'u',"..-"},
+            {'v',"...-"},
+            {'w',".--"},
+            {'x',"-..-"},
+            {'y',"-.--"},
+            {'z',"--.."}
+        };
+
+        for (int i = 0; i < words.Length; i++)
+        {
+            string transformation = "";
+
+            foreach (char c in words[i])
+            {
+                transformation += morseConversion[c];
+            }
+
+            if (!transformationList.ContainsKey(transformation))
+            {
+                transformationList.Add(transformation, 0);
+            }
+        }
+
+        return(transformationList.Count());
+    }
+}
