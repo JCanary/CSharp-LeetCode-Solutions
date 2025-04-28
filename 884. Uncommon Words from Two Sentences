@@ -1,0 +1,50 @@
+// 1ms Runtime Beats 92.08%
+// 48.4MB Memory Beats 11.88%
+public class Solution {
+    public string[] UncommonFromSentences(string s1, string s2) {
+        var s1Dict = new Dictionary<string, int>{};
+        var s2Dict = new Dictionary<string, int>{};
+
+        string[] s1Array = s1.Split(' '), s2Array = s2.Split(' ');
+
+        foreach (string s in s1Array)
+        {
+            if (!s1Dict.ContainsKey(s))
+            {
+                s1Dict.Add(s, 0);
+            }
+            else s1Dict[s]++;
+        }
+
+        foreach (string s in s2Array)
+        {
+            if (!s2Dict.ContainsKey(s))
+            {
+                s2Dict.Add(s, 0);
+            }
+            else s2Dict[s]++;
+        }
+
+        List<string> uncommonWords = new List<string>();
+
+        foreach (string s in s1Array)
+        {
+            if (!s2Dict.ContainsKey(s) && s1Dict[s] == 0)
+            {
+                uncommonWords.Add(s);
+            }
+        }
+
+        foreach (string s in s2Array)
+        {
+            if (!s1Dict.ContainsKey(s) && s2Dict[s] == 0)
+            {
+                uncommonWords.Add(s);
+            }
+        }
+
+        string[] output = uncommonWords.ToArray();
+
+        return output;
+    }
+}
