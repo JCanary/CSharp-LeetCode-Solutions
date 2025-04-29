@@ -1,0 +1,19 @@
+// 184ms Runtime Beats 7%
+// 65MB Memory Beats 21.75%
+// I did something horrible with this one
+public class Solution {
+    public int[] SortedSquares(int[] nums) {
+        var myStack = new Stack<int>();
+
+        foreach (int n in nums)
+        {
+            myStack.Push(n * n);
+        }
+
+        int[] output = myStack.ToArray();
+
+        Array.Sort(output);
+
+        return output;
+    }
+}
