@@ -1,0 +1,29 @@
+// 7ms Runtime Beats 45.1%
+// 55.49MB Memory Beats 19.61%
+public class Solution {
+    public int RepeatedNTimes(int[] nums) {
+        int n = nums.Length / 2;
+
+        var dict = new Dictionary<int, int>{};
+
+        foreach (int x in nums)
+        {
+            if (!dict.ContainsKey(x))
+            {
+                dict.Add(x, 1);
+            }
+            else dict[x]++;
+        }
+
+        foreach (int x in nums)
+        {
+            if (dict[x] == n)
+            {
+                return x;
+            }
+            else continue;
+        }
+
+        return 0;
+    }
+}
