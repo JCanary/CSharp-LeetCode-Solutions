@@ -1,0 +1,18 @@
+// 0ms Runtime Beats 100%
+// 29.36MB Memory Beats 6.23%
+public class Solution {
+    public int NumberOfSteps(int num) {
+        int output = 0;
+        while (num != 0)
+        {
+            if (num % 2 == 0)
+            {
+                num = num / 2;
+            }
+            else num--;
+            output++;
+        }
+
+        return output;
+    }
+}
