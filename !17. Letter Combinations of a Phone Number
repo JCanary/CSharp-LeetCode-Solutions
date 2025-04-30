@@ -1,0 +1,49 @@
+// Need to figure out how I am going to iterate through combos, maybe use a stack to gather sets? need to set up effective loop
+string digits = "23";
+
+var dict1 = new Dictionary<char, char>
+{
+    {'2', 'a'},
+    {'3', 'd'},
+    {'4', 'g'},
+    {'5', 'j'},
+    {'6', 'm'},
+    {'7', 'p'},
+    {'8', 't'},
+    {'9', 'w'},
+};
+
+var dict2 = new Dictionary<char, char>
+{
+    {'2', 'b'},
+    {'3', 'e'},
+    {'4', 'h'},
+    {'5', 'k'},
+    {'6', 'n'},
+    {'7', 'q'},
+    {'8', 'u'},
+    {'9', 'x'},
+};
+
+var dict3 = new Dictionary<char, char>
+{
+    {'2', 'c'},
+    {'3', 'f'},
+    {'4', 'i'},
+    {'5', 'l'},
+    {'6', 'o'},
+    {'7', 'r'},
+    {'8', 'v'},
+    {'9', 'y'},
+};
+
+var dict4 = new Dictionary<char, char>
+{
+    {'7', 's'},
+    {'9', 'z'},
+};
+
+foreach (char c in digits)
+{
+    
+}
