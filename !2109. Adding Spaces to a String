@@ -32,3 +32,4 @@ public class Solution {
         return s;
     }
 }
+// implement a char array and add spaces in the char array
