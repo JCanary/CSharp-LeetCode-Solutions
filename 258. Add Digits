@@ -1,0 +1,21 @@
+// 14ms Runtime Beats 4.09%
+// 29.06MB Memory Beats 49.71%
+public class Solution {
+    public int AddDigits(int num) {
+        int output = num;
+
+        while (output > 9)
+        {
+            output = 0;
+            string s = num.ToString();
+            foreach (char c in s)
+            {
+                Console.WriteLine((int)c);
+                output += ((int)c - 48);
+            }
+            num = output;
+        }
+
+        return output;
+    }
+}
