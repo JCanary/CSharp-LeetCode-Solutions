@@ -1,0 +1,17 @@
+// 0ms Runtime Beats 100%
+// 29.31MB Memory Beats 17.39%
+public class Solution {
+    public int HammingWeight(int n) {
+        string binary = Convert.ToString(n, 2);
+        int output = 0;
+        foreach (char c in binary)
+        {
+            if (c == '1')
+            {
+                output++;
+            }
+        }
+
+        return output;
+    }
+}
