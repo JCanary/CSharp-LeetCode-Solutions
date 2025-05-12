@@ -1,0 +1,30 @@
+// 20ms Runtime Beats 10.25%
+// 56.78MB Memory Beats 13.55%
+public class Solution {
+    public double FindMedianSortedArrays(int[] nums1, int[] nums2) {
+        double output = 0;
+        var myStack = new Stack<int>();
+        foreach (int num in nums1)
+        {
+            myStack.Push(num);
+        }
+        foreach (int num in nums2)
+        {
+            myStack.Push(num);
+        }
+
+        int[] merge = [..myStack];
+
+        Array.Sort(merge);
+
+        if (merge.Length % 2 == 0)
+        {
+            output = (merge[(merge.Length / 2) - 1] + merge[(merge.Length / 2)]) / 2d;
+        }
+        else
+        {
+            output = merge[merge.Length / 2];
+        }
+        return output;
+    }
+}
