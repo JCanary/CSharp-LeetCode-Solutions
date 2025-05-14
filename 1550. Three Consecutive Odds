@@ -1,0 +1,22 @@
+// 0ms Runtime Beats 100%
+// 43.84MB Memory Beats 98.91%
+public class Solution {
+    public bool ThreeConsecutiveOdds(int[] arr) {
+        int count = 0;
+        bool output = false;
+        foreach (int i in arr)
+        {
+            if (i % 2 != 0)
+            {
+                count++;
+                if (count == 3)
+                {
+                    output = true;
+                }
+            }
+            else count = 0;
+        }
+
+        return output;
+    }
+}
