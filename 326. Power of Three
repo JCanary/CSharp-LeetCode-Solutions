@@ -1,0 +1,17 @@
+// 2ms Runtime Beats 31.47%
+// 35.53MB Memory Beats 6.82%
+public class Solution {
+    public bool IsPowerOfThree(int n) {
+        long i = 1;
+
+        while (i != n)
+        {
+            i = i * 3;
+            if (i > n)
+            {
+              return false;
+            }
+        }
+        return true;
+    }
+}
