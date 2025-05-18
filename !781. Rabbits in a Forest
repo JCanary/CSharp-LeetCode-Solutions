@@ -1,0 +1,10 @@
+/*
+Given input array of nums
+
+Count responses, send to dict
+
+if # of responsed for a given color exceeds logical limit, split the count
+
+i.e given 3 responses of 1, there can logically be only two responses of 1 in the array for a single color
+    meaning that the 3rd response of 1 must be a different color, with 1 other member
+*/
