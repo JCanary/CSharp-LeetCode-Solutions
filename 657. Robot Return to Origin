@@ -1,0 +1,16 @@
+// 3ms Runtime Beats 96.84%
+// 45.1MB Memory Beats 9.49%
+public class Solution {
+    public bool JudgeCircle(string moves) {
+        int upDown = 0, leftRight = 0;
+        foreach (char c in moves)
+        {
+            if (c == 'U') upDown++;
+            else if (c == 'D') upDown--;
+            else if (c == 'L') leftRight++;
+            else if (c == 'R') leftRight--;
+        }
+        if (upDown == 0 && leftRight == 0) return true;
+        else return false;
+    }
+}
