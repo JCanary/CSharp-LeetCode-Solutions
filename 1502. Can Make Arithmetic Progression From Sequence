@@ -1,0 +1,15 @@
+// 3ms Runtime Beats 90.8%
+// 44.18MB Memory Beats 31.01%
+public class Solution {
+    public bool CanMakeArithmeticProgression(int[] arr) {
+        Array.Sort(arr);
+        int prog = arr[1] - arr[0];
+        for (int i = 0; i < arr.Length; i++)
+        {
+            if (i == arr.Length - 1) break;
+            else if (arr[i + 1] - arr[i] != prog) return false;
+        }
+
+        return true;
+    }
+}
