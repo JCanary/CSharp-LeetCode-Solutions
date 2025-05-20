@@ -1,3 +1,5 @@
+// I know there's a better solution, something without a stack. Probably edits the string in place or via a char array
+
 // 78ms Runtime Beats 5.85%
 // 40.25MB Memory Beats 5.54%
 public class Solution {
