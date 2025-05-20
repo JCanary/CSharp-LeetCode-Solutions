@@ -1,0 +1,37 @@
+// 65ms Runtime 57.75%
+// 40.71MB Memory 34.72%
+public class Solution {
+    public string MergeAlternately(string word1, string word2) {
+        int looplength = 0;
+        if (word1.Length > word2.Length)
+        {
+            looplength = word1.Length;
+        }
+        else looplength = word2.Length;
+
+        Console.WriteLine(looplength);
+
+        char[] arr1 = word1.ToCharArray(), arr2 = word2.ToCharArray();
+        char[] output = new char[arr1.Length + arr2.Length];
+
+        int pointer = 0;
+
+        for (int i = 0; i < looplength; i++)
+        {
+            if (i < word1.Length)
+            {
+                output.SetValue(arr1[i], pointer);
+                pointer++;
+            }
+            if (i < word2.Length)
+            {
+                output.SetValue(arr2[i], pointer);
+                pointer++;
+            }
+        }
+
+        string answer = string.Join("", output);
+
+        return answer;
+    }
+}
