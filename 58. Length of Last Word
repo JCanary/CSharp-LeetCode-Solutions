@@ -1,3 +1,14 @@
+// New Solution
+// 0ms Runtime Beats 100%
+// 39.93MB Memory Beats 31.44%
+public class Solution {
+    public int LengthOfLastWord(string s) {
+        s = s.TrimEnd();
+        return s.Length - s.LastIndexOf(' ') - 1;
+    }
+}
+
+// Previous Solution
 // 9 ms Runtime
 // 41.2 MB Memory 
 public class Solution {
