@@ -1,3 +1,19 @@
+// New Solution
+// 37ms Runtime Beats 14.17%
+// 44.8MB Memory Beats 10.06% 
+public class Solution {
+    public bool IsAnagram(string s, string t) {
+        char[] sArray = s.ToCharArray(), tArray = t.ToCharArray();
+        Array.Sort(sArray);
+        Array.Sort(tArray);
+        s = String.Join(' ', sArray);
+        t = String.Join(' ', tArray);
+        if (s == t) return true;
+        else return false;
+    }
+}
+
+// Old Solution
 // 41 ms Runtime Beats 11.34%
 // 45.25 MB Memory Beats 7.92%
 public class Solution {
