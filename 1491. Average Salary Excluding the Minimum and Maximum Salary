@@ -1,0 +1,14 @@
+// 1ms Runtime 40.91%
+// 42.06MB Memory Beats 19.32%
+public class Solution {
+    public double Average(int[] salary) {
+        Array.Sort(salary);
+        int total = 0, count = 0;
+        for (int i = 1; i < salary.Length - 1; i++)
+        {
+            total += salary[i];
+            count++;
+        }
+        return (double) total / count;
+    }
+}
