@@ -1,0 +1,25 @@
+// 27ms Runtime Beats 48.09%
+// 30.30MB Memory Beats 16.15%
+public class Solution {
+    public int Reverse(int x) {
+        string sOfX = Convert.ToString(x);
+        char[] digits = sOfX.ToCharArray();
+        bool negFlag = false;
+
+        if (digits[0] == '-')
+        {
+            negFlag = true;
+            digits.SetValue(null, 0);
+        }
+
+        Array.Reverse(digits);
+        sOfX = String.Join("", digits);
+        int.TryParse(sOfX, out x);
+
+        if (negFlag)
+        {
+            x = -x;
+        }
+        return x;
+    }
+}
