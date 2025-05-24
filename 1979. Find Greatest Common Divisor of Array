@@ -1,0 +1,22 @@
+// 117ms Runtime Beats 5.79%
+// 47.1MB Memory Beats 5.79%
+public class Solution {
+    public int FindGCD(int[] nums) {
+        Array.Sort(nums);
+        int output = 0;
+        for (int i = 1; i < nums[nums.Length - 1]; i++)
+        {
+            Console.WriteLine($"i = {i}");
+            if (nums[0] % i == 0 && nums[nums.Length - 1] % i == 0)
+            {
+                output = i;
+            }
+        }
+
+        if (nums[0] == nums[nums.Length - 1])
+        {
+            return nums[0];
+        }
+        else return output;
+    }
+}
