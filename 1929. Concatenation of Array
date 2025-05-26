@@ -1,0 +1,16 @@
+// 1ms Runtime Beats 36.27%
+// 52.28MB Memory Beats 14.04%
+public class Solution {
+    public int[] GetConcatenation(int[] nums) {
+        var list = new List<int>();
+        for (int i = 0; i < 2; i++)
+        {
+            foreach (int j in nums)
+            {
+                list.Add(j);
+            }
+        }
+        int[] output = list.ToArray();
+        return output;
+    }
+}
