@@ -1,0 +1,7 @@
+// 0ms Runtime Beats 100%
+// 29.45MB Memory Beats 21.8%
+public class Solution {
+    public int TheMaximumAchievableX(int num, int t) {
+        return num + (t * 2);
+    }
+}
