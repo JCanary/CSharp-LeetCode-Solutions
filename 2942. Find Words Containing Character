@@ -1,0 +1,17 @@
+// 1ms Runtime Beats 59.41%
+// 53.56MB Memory Beats 56.78%
+public class Solution {
+    public IList<int> FindWordsContaining(string[] words, char x) {
+        int i = 0;
+        var output = new List<int>();
+        foreach (string s in words)
+        {
+            if (s.Contains(x))
+            {
+                output.Add(i);
+            }
+            i++;
+        }
+        return output;
+    }
+}
