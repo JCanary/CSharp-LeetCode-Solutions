@@ -1,0 +1,30 @@
+// 3ms Runtime Beats 19.13%
+// 60.49MB Runtime Beats 5.51%
+public class Solution {
+    public void MoveZeroes(int[] nums) {
+        // Counting how many zeroes will have to be inserted to the end of the array
+        int zeroCount = 0;
+        foreach (int i in nums)
+        {
+            if (i == 0) zeroCount++;
+        }
+
+        // Moving non-zero numbers to front of array
+        int pointer = 0;
+        for (int i = 0; i < nums.Length; i++)
+        {
+            if (nums[i] != 0)
+            {
+                nums.SetValue(nums[i], pointer);
+                pointer++;
+            }
+        }
+
+        // Changing end of array to 0's 
+        for (int i = pointer; i < nums.Length; i++)
+        {
+            nums.SetValue(0, pointer);
+            pointer++;
+        }
+    }
+}
