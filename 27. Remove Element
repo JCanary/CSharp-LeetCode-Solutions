@@ -1,0 +1,19 @@
+// 2ms Runtime Beats 4.63%
+// 47.09MB Memory Beats 25.84%
+public class Solution {
+    public int RemoveElement(int[] nums, int val) {
+        int valCount = 0;
+        for (int i = 0; i < nums.Length; i++)
+        {
+            if (nums[i] == val)
+            {
+                nums[i] = 101;
+                valCount++;
+            }
+        }
+        Array.Sort(nums);
+        nums.Reverse();
+        int k = nums.Length - valCount;
+        return k;
+    }
+}
