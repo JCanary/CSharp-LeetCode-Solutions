@@ -1,0 +1,32 @@
+// 4ms Runtime Beats 50.15%
+// 42.06MB Memory Beats 38.53%
+public class Solution {
+    public int CalPoints(string[] operations) {
+        int output = 0;
+        int plusStore1 = 0, plusStore2 = 0;
+        var myStack = new Stack<int>();
+        foreach (string s in operations)
+        {
+            if (s == "C") myStack.Pop();
+            else if (s == "D")
+            {
+                myStack.Push(myStack.Peek() * 2);
+            }
+            else if (s == "+")
+            {
+                plusStore1 = myStack.Peek();
+                myStack.Pop();
+                plusStore2 = myStack.Peek() + plusStore1;
+                myStack.Push(plusStore1);
+                myStack.Push(plusStore2);
+
+            }
+            else myStack.Push(int.Parse(s));
+        }
+        foreach (int i in myStack)
+        {
+            output += i;
+        }
+        return output;
+    }
+}
