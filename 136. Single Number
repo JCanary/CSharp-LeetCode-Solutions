@@ -1,0 +1,20 @@
+// 6ms Runtime Beats 36.11%
+// 49.3MB Memory beats 14.31%
+public class Solution {
+    public int SingleNumber(int[] nums) {
+        var dict = new Dictionary<int, int> { };
+        foreach (int i in nums)
+        {
+            if (!dict.ContainsKey(i))
+            {
+                dict.Add(i, 0);
+            }
+            else dict[i]++;
+        }
+        foreach (int key in dict.Keys)
+        {
+            if (dict[key] == 0) return key;
+        }
+        return 0;
+    }
+}
