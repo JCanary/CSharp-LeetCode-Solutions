@@ -1,0 +1,7 @@
+// 0ms Runtime Beats 100%
+// 29.46MB Memory Beats 8.59%
+public class Solution {
+    public int Sum(int num1, int num2) {
+        return num1 + num2;
+    }
+}
