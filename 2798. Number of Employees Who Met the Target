@@ -1,0 +1,12 @@
+// 0ms Runtime Beats 100%
+// 43.92MB Memory Beats 27.03%
+public class Solution {
+    public int NumberOfEmployeesWhoMetTarget(int[] hours, int target) {
+        int output = 0;
+        foreach (int i in hours)
+        {
+            if (i >= target) output++;
+        }
+        return output;
+    }
+}
