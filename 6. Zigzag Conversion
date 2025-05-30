@@ -1,0 +1,42 @@
+// 164ms Runtime Beats 5.01%
+// 58.09MB Memory Beats 6.55%
+public class Solution {
+    public string Convert(string s, int numRows) {
+        int pointer = 1;
+        bool upDown = true;
+        var dict = new Dictionary<int, string> { };
+        foreach (char c in s)
+        {
+            if (!dict.ContainsKey(pointer))
+            {
+                dict.Add(pointer, "");
+            }
+            dict[pointer] += c;
+            Console.WriteLine($"{pointer}, {dict[pointer]}");
+            if (upDown)
+            {
+                pointer++;
+                if (pointer == numRows + 1)
+                {
+                    upDown = false;
+                    pointer -= 2;
+                }
+            }
+            else if (!upDown)
+            {
+                pointer--;
+                if (pointer == 0)
+                {
+                    upDown = true;
+                    pointer += 2;
+                }
+            }
+        }
+        string output = "";
+        foreach (var i in dict)
+        {
+            output += dict[i.Key];
+        }
+        return output;
+    }
+}
