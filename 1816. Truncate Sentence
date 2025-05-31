@@ -1,0 +1,14 @@
+// 0ms Runtime Beats 100%
+// 41.05MB Memory Beats 22.37%
+public class Solution {
+    public string TruncateSentence(string s, int k) {
+        string[] sArray = s.Split(' ');
+        string output = "";
+        for (int i = 0; i < k; i++)
+        {
+            output += $"{sArray[i]} ";
+        }
+        output = output.TrimEnd();
+        return output;
+    }
+}
