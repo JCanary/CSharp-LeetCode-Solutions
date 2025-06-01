@@ -1,0 +1,14 @@
+// 2ms Runtime Beats 24.24%
+// 44.26MB Memory Beats 34.85%
+public class Solution {
+    public int MinOperations(int[] nums, int k) {
+        int output = 0;
+        Array.Sort(nums);
+        foreach (int i in nums)
+        {
+            if (i < k) output++;
+            else break;
+        }
+        return output;
+    }
+}
