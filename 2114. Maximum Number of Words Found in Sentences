@@ -1,0 +1,16 @@
+// 1ms Runtime Beats 99.16%
+// 44.17MB Memory Beats 12.61%
+public class Solution {
+    public int MostWordsFound(string[] sentences) {
+        int output = 0;
+        foreach (string s in sentences)
+        {
+            string[] array = s.Split(' ');
+            if (array.Length > output)
+            {
+                output = array.Length;
+            }
+        }
+        return output;
+    }
+}
