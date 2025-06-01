@@ -1,0 +1,25 @@
+// 17ms Runtime Beats 15.29%
+// 57MB Memory Beats 8.24%
+public class Solution {
+    public string DecodeMessage(string key, string message) {
+        string output = "";
+
+        int asciiCounter = 97;
+        var dict = new Dictionary<char, char> { };
+        foreach (char c in key)
+        {
+            if (!dict.ContainsKey(c) && c != ' ')
+            {
+                dict.Add(c, (char)asciiCounter);
+                asciiCounter++;
+            }
+        }
+
+        foreach (char c in message)
+        {
+            if (c != ' ') output += dict[c];
+            else if (c == ' ') output += ' ';
+        }
+        return output;
+    }
+}
