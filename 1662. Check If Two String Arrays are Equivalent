@@ -1,0 +1,17 @@
+// 0ms Runtime Beats 100%
+// 44.61MB Memory Beats 5.98%
+public class Solution {
+    public bool ArrayStringsAreEqual(string[] word1, string[] word2) {
+        string w1 = "", w2 = "";
+        foreach (string s in word1)
+        {
+            w1 += s;
+        }
+        foreach (string s in word2)
+        {
+            w2 += s;
+        }
+        if (w1 == w2) return true;
+        else return false;
+    }
+}
