@@ -1,0 +1,17 @@
+// 0ms Runtime Beats 100%
+// 40.74MB Memory Beats 32%
+public class Solution {
+    public int MinimumChairs(string s) {
+        int output = 0, count = 0;
+        foreach (char c in s)
+        {
+            if (c == 'E')
+            {
+                count++;
+                if (count > output) output = count;
+            }
+            else count--;
+        }
+        return output;
+    }
+}
