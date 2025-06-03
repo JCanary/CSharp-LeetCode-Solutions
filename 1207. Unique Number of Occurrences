@@ -1,0 +1,31 @@
+// 2ms Runtime Beats 88.57%
+// 43.84MB Memory Beats 54.96%
+public class Solution {
+    public bool UniqueOccurrences(int[] arr) {
+        var dict = new Dictionary<int, int> { };
+        foreach (int i in arr)
+        {
+            if (!dict.ContainsKey(i))
+            {
+                dict.Add(i, 1);
+            }
+            else dict[i]++;
+        }
+
+        Dictionary<int, int>.ValueCollection collection = dict.Values;
+
+        var ans = new List<int>();
+
+        foreach (int i in collection)
+        {
+            Console.WriteLine(i);
+            if (!ans.Contains(i))
+            {
+                ans.Add(i);
+            }
+            else return false;
+        }
+
+        return true;
+    }
+}
