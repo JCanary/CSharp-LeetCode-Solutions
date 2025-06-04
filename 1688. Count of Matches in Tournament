@@ -1,0 +1,22 @@
+// 20ms Runtime Beats 88.89%
+// 29.06MB Memory Beats 33.33%
+public class Solution {
+    public int NumberOfMatches(int n) {
+        int output = 0;
+        while (n != 1)
+        {
+            if (n % 2 == 0)
+            {
+                output += n / 2;
+                n = n / 2;
+            }
+            else
+            {
+                output += (n - 1) / 2;
+                n = (n - 1) / 2 + 1;
+            }
+        }
+
+        return output;
+    }
+}
