@@ -1,0 +1,15 @@
+// 0ms Runtime Beats 100%
+// 28.87MB Memory Beats 72.84%
+public class Solution {
+    public int CountDigits(int num) {
+        string s = num.ToString();
+        int output = 0;
+        foreach (char c in s)
+        {
+            int cNum = Convert.ToInt32(c) - 48;
+            if (num % cNum == 0) output++;
+        }
+
+        return output;
+    }
+}
