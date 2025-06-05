@@ -1,0 +1,36 @@
+// 10ms Runtime Beats 18.11%
+// 89.86MB Memory Beats 48.03%
+public class Solution {
+    public int[] PivotArray(int[] nums, int pivot) {
+        int pointer = 0;
+        int[] output = new int[nums.Length];
+        for (int i = 0; i < nums.Length; i++)
+        {
+            if (nums[i] < pivot)
+            {
+                output[pointer] = nums[i];
+                pointer++;
+            }
+        }
+
+        for (int i = 0; i < nums.Length; i++)
+        {
+            if (nums[i] == pivot)
+            {
+                output[pointer] = nums[i];
+                pointer++;
+            }
+        }
+
+        for (int i = 0; i < nums.Length; i++)
+        {
+            if (nums[i] > pivot)
+            {
+                output[pointer] = nums[i];
+                pointer++;
+            }
+        }
+
+        return output;
+    }
+}
