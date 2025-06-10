@@ -1,0 +1,16 @@
+// 0ms Runtime Beats 100%
+// 47.22MB Memory Beats 18.05%
+public class Solution {
+    public bool CanConstruct(string ransomNote, string magazine) {
+        char[] magArray = magazine.ToCharArray();
+        foreach (char c in ransomNote)
+        {
+            if (Array.IndexOf(magArray, c) != -1)
+            {
+                magArray[Array.IndexOf(magArray, c)] = ' ';
+            }
+            else return false;
+        }
+        return true;
+    }
+}
