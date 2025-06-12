@@ -1,0 +1,16 @@
+// 9ms Runtime Beats 6.67%
+// 42.26MB Memory Beats 10.2%
+public class Solution {
+    public int HeightChecker(int[] heights) {
+        int[] expected = new int[heights.Length];
+        Array.Copy(heights, 0, expected, 0, heights.Length);
+        Array.Sort(expected);
+        int output = 0;
+        for (int i = 0; i < heights.Length; i++)
+        {
+            Console.WriteLine($"h {heights[i]}, e {expected[i]}");
+            if (heights[i] != expected[i]) output++;
+        }
+        return output;
+    }
+}
