@@ -1,0 +1,26 @@
+// Maybe my worst solution yet. Craaaaazy runtime
+// 241ms Runtime Beats 7.14%
+// 63.61MB Memory Beats 7.14%
+public class Solution {
+    public int[] SeparateDigits(int[] nums) {
+        string s = "";
+        foreach (int i in nums)
+        {
+            s += i.ToString();
+            Console.WriteLine(s);
+        }
+
+        var list = new List<int>();
+
+        foreach (char c in s)
+        {
+            int temp = Convert.ToInt32(c) - 48;
+            Console.WriteLine(temp);
+            list.Add(temp);
+        }
+
+        int[] newNums = [.. list];
+
+        return newNums;
+    }
+}
