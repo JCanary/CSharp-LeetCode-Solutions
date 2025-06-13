@@ -1,0 +1,20 @@
+// 5ms Runtime Beats 41.09%
+// 50.27MB Memory Beats 12.1%
+public class Solution {
+    public int MajorityElement(int[] nums) {
+        int majority = nums.Length / 2;
+        var dict = new Dictionary<int, int> { };
+        foreach (int i in nums)
+        {
+            if (!dict.ContainsKey(i))
+            {
+                dict.Add(i, 1);
+            }
+            else dict[i]++;
+
+            if (dict[i] > majority) return i;
+        }
+
+        return 0;
+    }
+}
