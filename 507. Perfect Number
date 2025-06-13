@@ -1,0 +1,13 @@
+// 2177ms Runtime Beats 13.85%
+// 31.32MB Memory Beats 32.31%
+public class Solution {
+    public bool CheckPerfectNumber(int num) {
+        int sumOfDivisors = 0;
+        for (int i = 1; i < num; i++)
+        {
+            if (num % i == 0) sumOfDivisors += i;
+        }
+        if (num == sumOfDivisors) return true;
+        else return false;
+    }
+}
