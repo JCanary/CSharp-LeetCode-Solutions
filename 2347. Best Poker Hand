@@ -1,0 +1,49 @@
+// 0ms Runtime Beats 100%
+// 43.2MB Memory Beats 17.65%
+public class Solution {
+    public string BestHand(int[] ranks, char[] suits) {
+        bool flushFlag = false;
+        char suit = ' ';
+
+        // Flush Checking
+        for (int i = 0; i < suits.Length; i++)
+        {
+            if (i == 0) suit = suits[i];
+            else
+            {
+                if (suits[i] == suit) flushFlag = true;
+                else
+                {
+                    flushFlag = false;
+                    break;
+                }
+            }
+        }
+
+        if (flushFlag) return "Flush";
+
+        // Of a Kind Checking
+        var dict = new Dictionary<int, int> { };
+        foreach (int i in ranks)
+        {
+            if (!dict.ContainsKey(i))
+            {
+                dict.Add(i, 1);
+            }
+            else
+            {
+                dict[i]++;
+            }
+        }
+
+        if (dict.ContainsValue(3) || dict.ContainsValue(4))
+        {
+            return "Three of a Kind";
+        }
+        else if (dict.ContainsValue(2))
+        {
+            return "Pair";
+        }
+        else return "High Card";
+    }
+}
