@@ -1,0 +1,20 @@
+// 0ms Runtime Beats 100%
+// 43.02MB Memory Beats 47.37%
+public class Solution {
+    public int CountSeniors(string[] details) {
+        int output = 0;
+        for (int i = 0; i < details.Length; i++)
+        {
+            if ((int)details[i][11] >= 54)
+            {
+                if (details[i][12] == '0' && details[i][11] == '6')
+                {
+                    continue;
+                }
+                else output++;
+            }
+        }
+
+        return output;
+    }
+}
