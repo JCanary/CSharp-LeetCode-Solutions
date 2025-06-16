@@ -1,0 +1,15 @@
+// 0ms Runtime Beats 100%
+// 29.47MB Memory Beats 12.96%
+public class Solution {
+    public int SumOfTheDigitsOfHarshadNumber(int x) {
+        string s = x.ToString();
+        int digitSum = 0;
+        foreach (char c in s)
+        {
+            digitSum += (int)c - 48;
+        }
+
+        if (x % digitSum == 0) return digitSum;
+        else return -1;
+    }
+}
