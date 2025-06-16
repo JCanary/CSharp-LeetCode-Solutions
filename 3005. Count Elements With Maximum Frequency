@@ -1,0 +1,31 @@
+// 1ms Runtime Beats 85.25%
+// 43.7MB Memory Beats 19.67%
+public class Solution {
+    public int MaxFrequencyElements(int[] nums) {
+        int mult = 1, temp = 0;
+        var freqCount = new Dictionary<int, int> { };
+        foreach (int i in nums)
+        {
+            if (!freqCount.ContainsKey(i))
+            {
+                freqCount.Add(i, 1);
+            }
+            else freqCount[i]++;
+        }
+        
+        foreach (KeyValuePair<int, int> kvp in freqCount)
+        {
+            if (kvp.Value > temp)
+            {
+                temp = kvp.Value;
+                mult = 1;
+            }
+            else if (kvp.Value == temp)
+            {
+                mult++;
+            }
+        }
+        
+        return temp * mult;
+    }
+}
