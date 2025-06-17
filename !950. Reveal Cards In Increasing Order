@@ -1,0 +1,26 @@
+// does not produce correct sequence. in the example, my code puts 7 in highArr, when it needs to be in lowArr to 
+// be correct
+
+int[] deck = [17, 13, 11, 2, 3, 5, 7];
+Array.Sort(deck);
+var lows = new List<int>();
+var highs = new List<int>();
+for (int i = 0; i < deck.Length; i++)
+{
+    if (i < deck.Length / 2) lows.Add(deck[i]);
+    else highs.Add(deck[i]);
+}
+
+int[] lowArr = [.. lows], highArr = [.. highs];
+
+var outList = new List<int>();
+
+for (int i = 0; i < deck.Length; i++)
+{
+    if (i < lowArr.Length) outList.Add(lowArr[i]);
+    if (i < highArr.Length) outList.Add(highArr[i]);
+}
+
+int[] output = [.. outList];
+
+return output;
