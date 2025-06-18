@@ -1,0 +1,24 @@
+// 117ms Runtime Beats 95.75%
+// 49.12MB Memory Beats 86.49%
+public class Solution {
+    public int[] Shuffle(int[] nums, int n) {
+        var x = new List<int>();
+        var y = new List<int>();
+        for (int i = 0; i < nums.Length; i++)
+        {
+            if (i < n) x.Add(nums[i]);
+            else y.Add(nums[i]);
+        }
+        int pointer = 0; 
+        int[] xArr = [.. x], yArr = [.. y];
+        for (int i = 0; i < n; i++)
+        {
+            nums[pointer] = xArr[i];
+            pointer++;
+            nums[pointer] = yArr[i];
+            pointer++;
+        }
+
+        return nums;
+    }
+}
