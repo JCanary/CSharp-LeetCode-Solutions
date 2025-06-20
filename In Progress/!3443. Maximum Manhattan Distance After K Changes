@@ -1,0 +1,62 @@
+// problems: what happens when k = 0?
+// how do i find the max distance when a direction is contested?
+// Works for cases with clear direction and k > 0
+
+// troublesome testcase
+string s = "EWWE";
+int k = 0;
+
+int northCount = 0, southCount = 0, eastCount = 0, westCount = 0;
+foreach (char c in s)
+{
+    if (c == 'N') northCount++;
+    else if (c == 'S') southCount++;
+    else if (c == 'E') eastCount++;
+    else if (c == 'W') westCount++;
+}
+
+bool northHigh = false, southHigh = false, eastHigh = false, westHigh = false;
+// Prioritizing north over south and east over west in cases of parity
+if (northCount >= southCount) northHigh = true;
+else southHigh = true;
+
+if (eastCount >= westCount) eastHigh = true;
+else westHigh = true;
+
+while (k != 0)
+{
+    if (northHigh && southCount != 0)
+    {
+        northCount++;
+        southCount--;
+        k--;
+    }
+    else if (southHigh && northCount != 0)
+    {
+        southCount++;
+        northCount--;
+        k--;
+    }
+    else if (eastHigh && westCount != 0)
+    {
+        eastCount++;
+        westCount--;
+        k--;
+    }
+    else if (westHigh && eastCount != 0)
+    {
+        westCount++;
+        eastCount--;
+        k--;
+    }
+    else k--;
+}
+
+int output = 0;
+if (northHigh) output += northCount;
+else if (southHigh) output += southCount;
+
+if (eastHigh) output += eastCount;
+else if (westHigh) output += westCount;
+
+return output;
