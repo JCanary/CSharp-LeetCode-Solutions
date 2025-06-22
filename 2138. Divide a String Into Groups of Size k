@@ -1,0 +1,32 @@
+// 1ms Runtime Beats 66.67%
+// 49.86MB Memory Beats 22.22%
+public class Solution {
+    public string[] DivideString(string s, int k, char fill) {
+        string temp = "";
+        var list = new List<string>();
+        int counter = 0;
+
+        for (int i = 0; i < s.Length; i++)
+        {
+            counter++;
+            temp += s[i];
+            if (counter == k)
+            {
+                list.Add(temp);
+                temp = "";
+                counter = 0;
+            }
+        }
+
+        if (s.Length % k != 0) list.Add(temp);
+
+        string[] sArray = [.. list];
+
+        while (sArray[sArray.Length - 1].Length != k)
+        {
+            sArray[sArray.Length - 1] += fill;
+        }
+
+        return sArray;
+    }
+}
