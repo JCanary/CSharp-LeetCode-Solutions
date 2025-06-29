@@ -1,0 +1,20 @@
+// 2ms Runtime Beats 77.68%
+// 53.68MB Memory Beats 70.54%
+public class Solution {
+    public int MinOperations(int[] nums, int k) {
+        int output = 0, numsTotal = 0;
+
+        foreach (int i in nums)
+        {
+            numsTotal += i;
+        }
+
+        while (numsTotal % k != 0)
+        {
+            output++;
+            numsTotal--;
+        }
+
+        return output;
+    }
+}
