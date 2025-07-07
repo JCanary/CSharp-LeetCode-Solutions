@@ -1,0 +1,23 @@
+// 12ms Runtime Beats 22.48%
+// 58.67MB Memory Beats 10.94%
+public class Solution {
+    public char KthCharacter(int k) {
+        string str = "a";
+
+        while (str.Length < k)
+        {
+            string temp = "";
+
+            foreach (char c in str)
+            {
+                int i = (int)c + 1;
+                if (i == 123) temp += 'a';
+                else temp += (char)i;
+            }
+
+            str += temp;
+        }
+
+        return str[k - 1];
+    }
+}
