@@ -1,0 +1,31 @@
+public class Solution {
+    public char KthCharacter(long k, int[] operations) {
+        string str = "a";
+  
+        foreach (int i in operations)
+        {
+
+            string temp = "";
+
+            if (i == 1)
+            {
+                foreach (char c in str)
+                {
+                    int j = (int)c + 1;
+                    if (j == 123) temp += 'a';
+                    else temp += (char)j;
+                }
+                str += temp;
+            }
+            else if (i == 0)
+            {
+                temp = str;
+                str += temp;
+            }
+        }
+
+        char[] cArr = str.ToCharArray();
+
+        return cArr[k - 1];
+    }
+}
