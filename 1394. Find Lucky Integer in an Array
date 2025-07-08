@@ -1,0 +1,26 @@
+// 2ms Runtime Beats 36%
+// 42.85MB Memory Beats 60.51%
+public class Solution {
+    public int FindLucky(int[] arr) {
+        int output = -1;
+        var dict = new Dictionary<int, int> { };
+        foreach (int i in arr)
+        {
+            if (!dict.ContainsKey(i))
+            {
+                dict.Add(i, 1);
+            }
+            else dict[i]++;
+        }
+
+        foreach (KeyValuePair<int, int> kvp in dict)
+        {
+            if (kvp.Key == kvp.Value && kvp.Key > output)
+            {
+                output = kvp.Key;
+            }
+        }
+
+        return output;
+    }
+}
