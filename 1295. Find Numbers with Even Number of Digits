@@ -1,0 +1,15 @@
+// 0ms Runtime Beats 100%
+// 42.82MB Memory Beats 42.15%
+public class Solution {
+    public int FindNumbers(int[] nums) {
+        int output = 0;
+
+        foreach (int i in nums)
+        {
+            string s = i.ToString();
+            if (s.Length % 2 == 0) output++;
+        }
+
+        return output;
+    }
+}
