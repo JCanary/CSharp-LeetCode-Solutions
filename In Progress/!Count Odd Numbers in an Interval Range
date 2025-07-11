@@ -1,0 +1,15 @@
+int low = 3, high = 8;
+int diff = high - low;
+decimal halfDiff = (decimal)diff / 2;
+decimal ceiling = Math.Ceiling(halfDiff);
+int intCeiling = (int)ceiling;
+// see notes for logic statements. Hard part is done lol
+if (diff % 2 != 0)
+{
+    if ((low % 2 != 0 && high % 2 == 0) || (high % 2 != 0 && low % 2 == 0))
+    {
+
+    }
+}
+
+return 0;
