@@ -1,0 +1,24 @@
+// 27ms Runtime Beats 48.89%
+// 29.13 MB Memory Beats 37.78%
+public class Solution {
+    public int CountOdds(int low, int high) {
+        int diff = high - low;
+        decimal halfDiff = (decimal)diff / 2;
+        decimal ceiling = Math.Ceiling(halfDiff);
+        int intCeiling = (int)ceiling;
+
+        if (diff % 2 != 0)
+        {
+            return intCeiling;
+        }
+        else if (diff % 2 == 0)
+        {
+            if (low % 2 != 0 && high % 2 != 0)
+            {
+                return (diff / 2) + 1;
+            }
+            else return diff / 2;
+        }
+        return 0;
+    }
+}
