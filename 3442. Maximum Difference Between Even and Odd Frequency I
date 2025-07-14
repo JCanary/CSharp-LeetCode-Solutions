@@ -1,0 +1,24 @@
+// 2ms Runtime Beats 58.45%
+// 41.49MB Memory Beats 36.85%
+public class Solution {
+    public int MaxDifference(string s) {
+        var dict = new Dictionary<char, int> { };
+        foreach (char c in s)
+        {
+            if (!dict.ContainsKey(c))
+            {
+                dict.Add(c, 1);
+            }
+            else dict[c]++;
+        }
+
+        int odd = 0, even = 100;
+        foreach (KeyValuePair<char, int> kvp in dict)
+        {
+            if (kvp.Value % 2 == 0 && kvp.Value < even) even = kvp.Value;
+            else if (kvp.Value % 2 != 0 && kvp.Value > odd) odd = kvp.Value;
+        }
+
+        return odd - even;
+    }
+}
