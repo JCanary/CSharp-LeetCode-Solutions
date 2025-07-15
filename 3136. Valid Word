@@ -1,0 +1,28 @@
+// 18ms Runtime Beats 11.11%
+// 42.71MB Memory Beats 13.89%
+public class Solution {
+    public bool IsValid(string word) {
+        word = word.ToLower();
+        char[] vowels = ['a', 'e', 'i', 'o', 'u'];
+        char[] consonants =
+        [
+            'b','c','d','f','g','h','j','k','l','m',
+            'n','p','q','r','s','t','v','w','x','y','z'
+        ];
+        if (word.Length < 3) return false;
+
+        if (word.Contains('@') || word.Contains('#') || word.Contains('$')) return false;
+
+        bool con = false, vow = false;
+
+        foreach (char c in word)
+        {
+            if (vowels.Contains(c)) vow = true;
+            else if (consonants.Contains(c)) con = true;
+
+            if (vow == true && con == true) return true;
+        }
+
+        return false;
+    }
+}
