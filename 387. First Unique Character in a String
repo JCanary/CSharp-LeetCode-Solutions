@@ -1,0 +1,22 @@
+// 20ms Runtime Beats 58.87%
+// 49.35MB Memory Beats 36.06%
+public class Solution {
+    public int FirstUniqChar(string s) {
+        var dict = new Dictionary<char, int> { };
+        foreach (char c in s)
+        {
+            if (!dict.ContainsKey(c))
+            {
+                dict.Add(c, 1);
+            }
+            else dict[c]++;
+        }
+
+        foreach (KeyValuePair<char, int> kvp in dict)
+        {
+            if (kvp.Value == 1) return s.IndexOf(kvp.Key);
+        }
+
+        return -1;
+    }
+}
