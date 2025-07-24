@@ -1,0 +1,21 @@
+// 13ms Runtime Beats 30.82%
+// 52.74MB Memory Beats 22.96%
+public class Solution {
+    public string ReverseWords(string s) {
+       string[] sArr = s.Split(' ');
+        string[] revSArr = new string[sArr.Length];
+
+        for (int i = 0; i < revSArr.Length; i++)
+        {
+            var myStack = new Stack<char>();
+            foreach (char c in sArr[i])
+            {
+                myStack.Push(c);
+            }
+            string temp = String.Join("", myStack);
+            revSArr[i] = temp;
+        }
+
+        return String.Join(" ", revSArr); 
+    }
+}
