@@ -1,0 +1,38 @@
+// 1ms Runtime Beats 89.51%
+// 41.06MB Memory Beats 30.86%
+public class Solution {
+    public string ToGoatLatin(string sentence) {
+        string[] sentArr = sentence.Split(' ');
+        string[] goatArr = new string[sentArr.Length];
+        char[] vowels = ['a', 'A', 'e', 'E', 'i', 'I', 'o', 'O', 'u', 'U'];
+
+        for (int i = 0; i < goatArr.Length; i++)
+        {
+            int j = i + 1;
+            if (vowels.Contains(sentArr[i][0]))
+            {
+                goatArr[i] = sentArr[i];
+                goatArr[i] += "ma";
+                while (j != 0)
+                {
+                    goatArr[i] += 'a';
+                    j--;
+                }
+            }
+            else
+            {
+                char first = sentArr[i][0];
+                goatArr[i] = sentArr[i][1..];
+                goatArr[i] += first;
+                goatArr[i] += "ma";
+                while (j != 0)
+                {
+                    goatArr[i] += 'a';
+                    j--;
+                }
+            }
+        }
+
+        return String.Join(' ', goatArr);
+    }
+}
