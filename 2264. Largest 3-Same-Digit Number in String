@@ -1,0 +1,37 @@
+// 1ms Runtime Beats 84.54%
+// 41.16MB Memory Beats 50.13%
+public class Solution {
+    public string LargestGoodInteger(string num) {
+        char prevNum = ' ';
+        int count = 0;
+        char highNum = ' ';
+
+        foreach (char c in num)
+        {
+            if (prevNum != c)
+            {
+                count = 1;
+            }
+            else
+            {
+                count++;
+                if (count == 3 && (int)c > (int)highNum)
+                {
+                    highNum = c;
+                }
+            }
+
+            prevNum = c;
+        }
+
+        string output = "";
+
+        for (int i = 0; i < 3; i++)
+        {
+            output += highNum;
+        }
+
+        if (highNum == ' ') return "";
+        else return output;
+    }
+}
