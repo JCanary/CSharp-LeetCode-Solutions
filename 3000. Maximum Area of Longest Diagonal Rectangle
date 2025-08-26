@@ -1,0 +1,29 @@
+// 14ms Runtime Beats 0%
+// 47.02MB Memory Beats 9.52%
+public class Solution {
+    public int AreaOfMaxDiagonal(int[][] dimensions) {
+        double[] sqrts = new double[dimensions.Length];
+        int[] area = new int[dimensions.Length];
+
+        for (int i = 0; i < dimensions.Length; i++)
+        {
+            double j = (dimensions[i][0] * dimensions[i][0]) + (dimensions[i][1] * dimensions[i][1]);
+            sqrts[i] = Math.Sqrt(j);
+            area[i] = dimensions[i][0] * dimensions[i][1];
+        }
+
+        int maxDiagonalIndex = 0;
+        int secDiagonalIndex = 0;
+
+        for (int i = 0; i < dimensions.Length; i++)
+        {
+            if (sqrts[i] > sqrts[maxDiagonalIndex]) maxDiagonalIndex = i;
+            else if (sqrts[i] == sqrts[maxDiagonalIndex]) maxDiagonalIndex = Array.IndexOf(area, Math.Max(area[maxDiagonalIndex], area[i]));
+        }
+
+        Console.WriteLine($"max sqrt = {sqrts[maxDiagonalIndex]}, max area = {area[maxDiagonalIndex]}");
+
+        if (sqrts[maxDiagonalIndex] == sqrts[secDiagonalIndex]) return Math.Max(area[maxDiagonalIndex], area[secDiagonalIndex]);
+        else return area[maxDiagonalIndex];
+    }
+}
