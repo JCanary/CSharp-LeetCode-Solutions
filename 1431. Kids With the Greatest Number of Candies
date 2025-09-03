@@ -1,0 +1,17 @@
+// 7ms Runtime Beats 8.85%
+// 49.46MB Memory Beats 33.99%
+public class Solution {
+    public IList<bool> KidsWithCandies(int[] candies, int extraCandies) {
+        int greatestNum = candies.Max();
+
+        var output = new List<bool>();
+
+        foreach (int i in candies)
+        {
+            if (i + extraCandies >= greatestNum) output.Add(true);
+            else output.Add(false);
+        }
+
+        return output;
+    }
+}
