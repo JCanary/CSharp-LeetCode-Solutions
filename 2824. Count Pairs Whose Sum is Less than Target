@@ -1,0 +1,19 @@
+// 6ms Runtime Beats 64.66%
+// 44.8MB Memory Beats 79.37%
+public class Solution {
+    public int CountPairs(IList<int> nums, int target) {
+        int[] numsArr = nums.ToArray();
+
+        int output = 0;
+
+        for (int i = 0; i < numsArr.Length; i++)
+        {
+            for (int j = i + 1; j < numsArr.Length; j++)
+            {
+                if (nums[i] + nums[j] < target) output++;
+            }
+        }
+
+        return output;
+    }
+}
