@@ -1,0 +1,49 @@
+// 9ms Runtime Beats 15.34%
+// 42.60MB Runtime Beats 9.82%
+public class Solution {
+    public int MaxFreqSum(string s) {
+        char[] vowels = ['a', 'e', 'i', 'o', 'u'];
+
+        var vowelDict = new Dictionary<char, int> { };
+        var constDict = new Dictionary<char, int> { };
+
+        foreach (char c in s)
+        {
+            if (vowels.Contains(c))
+            {
+                if (!vowelDict.ContainsKey(c))
+                {
+                    vowelDict.Add(c, 1);
+                }
+                else vowelDict[c]++;
+            }
+            else
+            {
+                if (!constDict.ContainsKey(c))
+                {
+                    constDict.Add(c, 1);
+                }
+                else constDict[c]++;
+            }
+        }
+
+        var sortedVowels = from entry in vowelDict orderby entry.Value descending select entry;
+        var sortedConst = from entry in constDict orderby entry.Value descending select entry;
+
+        int output = 0;
+
+        foreach (var kvp in sortedVowels)
+        {
+            output += kvp.Value;
+            break;
+        }
+
+        foreach (var kvp in sortedConst)
+        {
+            output += kvp.Value;
+            break;
+        }
+
+        return output;
+    }
+}
