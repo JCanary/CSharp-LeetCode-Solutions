@@ -1,0 +1,22 @@
+// 0ms Runtime Beats 100%
+// 40.07MB Memory Beats 82.46%
+public class Solution {
+    public int[] SumZero(int n) {
+        int half = n / 2;
+
+        var list = new List<int>();
+
+        while (half != 0)
+        {
+            list.Add(half);
+            list.Add(-half);
+            half -= 1;
+        }
+
+        if (n % 2 != 0) list.Add(0);
+
+        int[] output = [.. list];
+
+        return output;
+    }
+}
