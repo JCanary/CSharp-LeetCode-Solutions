@@ -1,0 +1,19 @@
+// 2ms Runtime Beats 78.21
+// 52.9MB Memory Beats 86.75%
+public class Solution {
+    public int[] RecoverOrder(int[] order, int[] friends) {
+        int[] output = new int[friends.Length];
+        int pointer = 0;
+
+        foreach (int i in order)
+        {
+            if (friends.Contains(i))
+            {
+                output[pointer] = i;
+                pointer++;
+            }
+        }
+
+        return output;
+    }
+}
