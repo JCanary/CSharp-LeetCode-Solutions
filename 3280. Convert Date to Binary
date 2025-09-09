@@ -1,0 +1,19 @@
+// 2ms Runtime Beats 94.81%
+// 42.33MB Memory Beats 29.63%
+public class Solution {
+    public string ConvertDateToBinary(string date) {
+        string[] dateArr = date.Split('-');
+
+        int[] numArr = new int[3];
+
+        for (int i = 0; i < dateArr.Length; i++)
+        {
+            numArr[i] = int.Parse(dateArr[i]);
+            dateArr[i] = Convert.ToString(numArr[i], 2);
+        }
+
+        date = String.Join('-', dateArr);
+
+        return date;
+    }
+}
