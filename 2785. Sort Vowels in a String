@@ -1,0 +1,38 @@
+// 90ms Runtime Beats 26.16%
+// 56.35MB Memory Beats 88.89%
+public class Solution {
+    public string SortVowels(string s) {
+        char[] vowels = ['a', 'e', 'i', 'o', 'u', 'A', 'E', 'I', 'O', 'U'];
+
+        char[] sArr = s.ToCharArray();
+
+        var sVowels = new List<char>();
+
+        for (int i = 0; i < sArr.Length; i++)
+        {
+            if (vowels.Contains(sArr[i]))
+            {
+                sVowels.Add(sArr[i]);
+                sArr[i] = ' ';
+            }
+        }
+
+        char[] sVowelsArr = [.. sVowels];
+        Array.Sort(sVowelsArr);
+
+        int pointer = 0;
+
+        for (int i = 0; i < sArr.Length; i++)
+        {
+            if (sArr[i] == ' ')
+            {
+                sArr[i] = sVowelsArr[pointer];
+                pointer++;
+            }
+        }
+
+        string t = new string(sArr);
+
+        return t;
+    }
+}
