@@ -1,0 +1,17 @@
+// 8ms Runtime Beats 42.59%
+// 48.29MB Memory Beats 45.93%
+public class Solution {
+    public int[] SmallerNumbersThanCurrent(int[] nums) {
+        int[] output = new int[nums.Length];
+
+        for (int i = 0; i < nums.Length; i++)
+        {
+            for (int j = 0; j < nums.Length; j++)
+            {
+                if (nums[i] > nums[j]) output[i]++;
+            }
+        }
+
+        return output;
+    }
+}
