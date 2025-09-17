@@ -1,0 +1,25 @@
+// 2ms Runtime Beats 36.34%
+// 40.42MB Memory Beats 31.83%
+public class Solution {
+    public int CanBeTypedWords(string text, string brokenLetters) {
+        string[] textArray = text.Split(' ');
+        bool[] eval = new bool[textArray.Length];
+
+        for (int i = 0; i < textArray.Length; i++)
+        {
+            foreach (char c in brokenLetters)
+            {
+                if (textArray[i].Contains(c)) eval[i] = true;
+            }
+        }
+
+        int output = textArray.Length;
+
+        foreach (bool b in eval)
+        {
+            if (b) output--;
+        }
+
+        return output;
+    }
+}
