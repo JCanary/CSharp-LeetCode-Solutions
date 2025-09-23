@@ -1,0 +1,31 @@
+// 3ms Runtime Beats 85.71%
+// 41.82MB Memory Beats 85.71%
+public class Solution {
+    public int[] CircularGameLosers(int n, int k) {
+        bool[] passed = new bool[n];
+
+        Array.Fill(passed, false);
+
+        int mult = 0;
+        int pointer = 0;
+
+        while (!passed[pointer])
+        {
+            passed[pointer] = true;
+            mult++;
+            pointer += mult * k;
+            if (pointer >= n) pointer = pointer % n;
+        }
+
+        var list = new List<int>();
+
+        for (int i = 0; i < n; i++)
+        {
+            if (!passed[i]) list.Add(i + 1);
+        }
+
+        int[] output = [.. list];
+
+        return output;
+    }
+}
