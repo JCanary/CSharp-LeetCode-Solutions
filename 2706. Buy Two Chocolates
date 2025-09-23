@@ -1,0 +1,21 @@
+// 3ms Runtime Beats 51.79%
+// 47.98MB Memory Beats 58.93%
+public class Solution {
+    public int BuyChoco(int[] prices, int money) {
+        int count = 0, temp = money;
+
+        Array.Sort(prices);
+
+        foreach (int i in prices)
+        {
+            if (i <= temp)
+            {
+                temp -= i;
+                count++;
+                if (count == 2) return temp;
+            }
+        }
+
+        return money;
+    }
+}
