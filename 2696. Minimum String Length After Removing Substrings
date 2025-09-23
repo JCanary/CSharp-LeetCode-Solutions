@@ -1,0 +1,26 @@
+// 11ms Runtime Beats 10.64%
+// 45.97MB Memory Beats 23.40%
+public class Solution {
+    public int MinLength(string s) {
+        var myStack = new Stack<char>();
+
+        for (int i = 0; i < s.Length; i++)
+        {
+            char[] temp = myStack.ToArray();
+
+            if (i == 0 || temp.Length == 0) myStack.Push(s[i]);
+            else
+            {
+                if (s[i] == 'B' && myStack.Peek() == 'A' || s[i] == 'D' && myStack.Peek() == 'C')
+                {
+                    myStack.Pop();
+                }
+                else myStack.Push(s[i]);
+            }
+        }
+
+        char[] output = myStack.ToArray();
+
+        return output.Length;
+    }
+}
