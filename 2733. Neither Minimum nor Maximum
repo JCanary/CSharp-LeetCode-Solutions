@@ -1,0 +1,16 @@
+// 32ms Runtime Beats 13.73%
+// 57.85MB Memory Beats 82.35%
+public class Solution {
+    public int FindNonMinOrMax(int[] nums) {
+        Array.Sort(nums);
+        int[] minMax = [nums[0], nums[nums.Length - 1]];
+        foreach (int i in nums)
+        {
+            if (!minMax.Contains(i))
+            {
+                return i;
+            }
+        }
+        return -1;
+    }
+}
