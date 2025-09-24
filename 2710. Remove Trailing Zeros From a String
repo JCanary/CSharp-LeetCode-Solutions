@@ -1,0 +1,18 @@
+// 1ms Runtime Beats 78.79%
+// 44.53MB Memory Beats 48.48%
+public class Solution {
+    public string RemoveTrailingZeros(string num) {
+        int pointer = 0;
+
+        for (int i = num.Length - 1; i >= 0; i--)
+        {
+            if (num[i] != '0')
+            {
+                pointer = i + 1;
+                break;
+            }
+        }
+
+        return num.Remove(pointer);
+    }
+}
