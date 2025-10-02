@@ -1,0 +1,23 @@
+// 27ms Runtime Beats 61.54%
+// 29.05MB Memory Beats 53.85%
+public class Solution {
+    public int MaxBottlesDrunk(int numBottles, int numExchange) {
+        int numEmpty = 0;
+        int output = 0;
+
+        while (numBottles > 0)
+        {
+            numEmpty += numBottles;
+            output += numBottles;
+            numBottles = 0;
+            if (numEmpty >= numExchange)
+            {
+                numEmpty -= numExchange;
+                numExchange++;
+                numBottles++;
+            }
+        }
+
+        return output;
+    }
+}
