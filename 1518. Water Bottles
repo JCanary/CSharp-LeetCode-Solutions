@@ -1,0 +1,17 @@
+// 0 ms Runtime Beats 100%
+// 29.31 MB Memory Beats 8.33%
+public class Solution {
+    public int NumWaterBottles(int numBottles, int numExchange) {
+        int numEmpties = 0, output = 0;
+
+        while (numBottles != 0)
+        {
+            output += numBottles;
+            numEmpties += numBottles;
+            numBottles = numEmpties / numExchange;
+            numEmpties = numEmpties % numExchange;
+        }
+
+        return output;
+    }
+}
