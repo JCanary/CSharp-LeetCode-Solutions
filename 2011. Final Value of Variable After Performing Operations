@@ -1,16 +1,15 @@
 // 0ms Runtime Beats 100%
-// 43.02MB Memory Beats 27.51%
+// 42.47MB Memory Beats 98.56%
 public class Solution {
     public int FinalValueAfterOperations(string[] operations) {
         int output = 0;
+
         foreach (string s in operations)
         {
-            if (s.Contains("-"))
-            {
-                output--;
-            }
+            if (s.Contains('-')) output--;
             else output++;
         }
+
         return output;
     }
 }
