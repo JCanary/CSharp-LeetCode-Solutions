@@ -1,0 +1,15 @@
+// 1ms Runtime Beats 82.61%
+// 29.29MB Memory Beats 60.87%
+public class Solution {
+    public int CountOperations(int num1, int num2) {
+        int output = 0;
+        while (num1 > 0 && num2 > 0)
+        {
+            if (num1 >= num2) num1 -= num2;
+            else num2 -= num1;
+            output++;
+        }
+
+        return output;
+    }
+}
